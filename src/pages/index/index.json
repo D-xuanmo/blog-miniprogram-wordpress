@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "轩陌博客"
+  "navigationBarTitleText": "轩陌博客",
+  "enablePullDownRefresh": true
 }

@@ -29,10 +29,18 @@
 .x-icon-notice:before {
   content: "\e6df";
 }
+.x-icon-loading {
+  display: inline-block;
+  animation: rotating 2s linear infinite;
+}
+.x-icon-loading:before {
+  content: "\e6da";
+}
 .x-icon-star:before,
 .icon-star:before {
   content: "\e664";
 }
+
 @keyframes rotating {
   to {
     transform: rotateZ(360deg);
