@@ -10,14 +10,9 @@ Page({
     noMore: false
   },
 
-  onLoad () {
-    app.indexOnLoad = ({ banner, notice }) => {
-      this.setData({
-        banner: banner.list,
-        notice
-      })
-      this.init()
-    }
+  async onLoad () {
+    await this.getGlobalInfo()
+    await this.init()
   },
 
   async init () {
@@ -33,6 +28,19 @@ Page({
       currentPage: this.data.currentPage + 1
     })
     this.init()
+  },
+
+  async getGlobalInfo () {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    let { data } = await wx.$request.get('/wp-json/xm-blog/v1/info')
+    wx.hideLoading()
+    app.globalData.site = data
+    this.setData({
+      banner: data.banner.list,
+      notice: data.notice
+    })
   },
 
   async getArticleList () {

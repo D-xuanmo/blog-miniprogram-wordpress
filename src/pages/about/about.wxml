@@ -44,7 +44,6 @@
     <view class="contact-item m-t-15px">
       <image src="../../image/icon-link.png" mode="widthFix" class="m-r-5px"></image>
       <text
-        class="c-theme"
         data-text="{{domain}}"
         bind:tap="copyText"
       >{{domain}}</text>
@@ -53,7 +52,6 @@
     <view class="contact-item m-t-15px">
       <image src="../../image/icon-github.png" mode="widthFix" class="m-r-5px"></image>
       <text
-        class="c-theme"
         data-text="https://github.com/xuanmos"
         bind:tap="copyText"
       >https://github.com/xuanmos</text>
@@ -62,7 +60,6 @@
     <view class="contact-item m-t-15px">
       <image src="../../image/icon-qq.png" mode="widthFix" class="m-r-5px"></image>
       <text
-        class="c-theme"
         data-text="993901865"
         bind:tap="copyText"
       >993901865</text>
@@ -76,7 +73,6 @@
     <view class="contact-item m-t-15px">
       <image src="../../image/icon-email.png" mode="widthFix" class="m-r-5px"></image>
       <text
-        class="c-theme"
         data-text="me@xuanmo.xin"
         bind:tap="copyText"
       >me@xuanmo.xin</text>
