@@ -8,32 +8,37 @@ Page({
     totalPage: null,
     total: null,
     commentList: [],
-    noMore: false
+    noMore: false,
+    loadingMore: false
   },
 
-  onLoad ({ id }) {
+  async onLoad ({ id }) {
     wx.showShareMenu()
     this.setData({
       articleId: id
     })
-    this.getDetail(id)
-    this.getCommentList(id)
-    this.updateViewCount(id)
+    wx.showLoading({
+      title: '加载中...'
+    })
+    await this.getDetail(id)
+    await this.getCommentList(id)
+    await this.updateViewCount(id)
+    wx.hideLoading()
   },
 
   async onReachBottom () {
     this.setData({
-      currentPage: this.data.currentPage + 1
+      currentPage: this.data.currentPage + 1,
+      loadingMore: true
     })
-    this.getCommentList(this.data.articleId)
+    await this.getCommentList(this.data.articleId)
+    this.setData({
+      loadingMore: false
+    })
   },
 
   async getDetail (id) {
-    wx.showLoading({
-      title: '加载中...'
-    })
     let { data } = await wx.$request.get(`/wp-json/wp/v2/posts/${id}`)
-    wx.hideLoading()
     const content = data.content.rendered
       .replace(/<img/gi, '<img style="max-width:100%;height:auto;"')
       .replace(/<code/gi, '<code class="code"')
@@ -62,16 +67,12 @@ Page({
       })
       return
     }
-    wx.showLoading({
-      title: '加载中...'
-    })
     let { data, header } = await wx.$request.get('/wp-json/wp/v2/comments', {
       data: {
         post: id,
         page: this.data.currentPage
       }
     })
-    wx.hideLoading()
     this.setData({
       commentList: data,
       total: +header['X-WP-Total'],

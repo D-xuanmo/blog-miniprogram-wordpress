@@ -34,5 +34,9 @@
   </view>
   <comment data="{{commentList}}"></comment>
 
+  <view wx:if="{{loadingMore}}" class="load-more align-center m-t-20px c-placeholder">
+    <text class="x-icon-loading v-middle"></text>
+    <text class="v-middle"> Loading...</text>
+  </view>
   <view wx:if="{{noMore}}" class="align-center m-t-20px no-more c-placeholder">已经到底啦~</view>
 </view>
