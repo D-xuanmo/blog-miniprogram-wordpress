@@ -1,9 +1,22 @@
-# 微信小程序初始框架模版
+# 博客小程序版
 
 - 框架已经集成scss编译、es6编译（解决微信小程序不能使用async/await语法糖）
-- 框架已经引入`WeUI` [文档查看](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/quickstart.html)
+- 可搭配现有wordpress主题使用[https://github.com/xuanmos/xm-nuxtjs-wordpress](https://github.com/xuanmos/xm-nuxtjs-wordpress)
+
+## 在线预览
+![](./qrcode.jpg)
 
 ## 项目启动
+
+## 替换微信小程序配置文件
+```json
+// src/project.config.json
+{
+  "appid": "替换为自己的小程序id",
+  "projectname": "自己的小程序名"
+}
+```
+
 ### 安装依赖
 ```bash
 $ yarn

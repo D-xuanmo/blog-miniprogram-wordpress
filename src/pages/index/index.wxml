@@ -17,25 +17,30 @@
 
 <view class="wrapper article-container">
   <view wx:for="{{articleList}}" wx:key="id" class="article-item w100">
-    <navigator
-      wx:if="{{item.articleInfor.thumbnail}}"
-      url="/pages/detail/detail?id={{item.id}}"
-      class="article-item__thumbnail align-center m-r-10px"
-    >
-      <image src="{{item.articleInfor.thumbnail}}" mode="widthFix"></image>
-    </navigator>
-
-    <view class="article-item__content">
+    <view class="article-item__header">
       <navigator
+        wx:if="{{item.articleInfor.thumbnail}}"
         url="/pages/detail/detail?id={{item.id}}"
-        class="article-item__title f-s-large"
+        class="article-item__thumbnail align-center m-r-10px"
       >
-        <text class="v-middle">{{item.title.rendered}}</text>
+        <image src="{{item.articleInfor.thumbnail}}" mode="widthFix"></image>
       </navigator>
 
-      <view class="article-item__summary m-t-5px c-sub-text">{{item.articleInfor.summary}}</view>
+      <view class="article-item__content">
+        <navigator
+          url="/pages/detail/detail?id={{item.id}}"
+          class="article-item__title f-s-large"
+        >
+          <text class="v-middle">{{item.title.rendered}}</text>
+        </navigator>
 
-      <view class="article-item__info c-placeholder m-t-15px f-s-small">
+        <view class="article-item__summary m-t-5px c-sub-text">{{item.articleInfor.summary}}</view>
+      </view>
+    </view>
+
+    <view class="article-item__info-container m-t-15px">
+      <view class="article-item__category f-s-small m-r-5px">{{item.articleInfor.classify[0].name}}</view>
+      <view class="article-item__info flex c-placeholder f-s-small">
         <view class="m-r-10px">
           <text class="x-icon-eye m-r-5px"></text>
           <text>{{item.articleInfor.viewCount}}</text>

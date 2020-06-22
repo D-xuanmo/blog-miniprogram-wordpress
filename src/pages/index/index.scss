@@ -31,13 +31,16 @@ page {
 }
 
 .article-item {
-  display: flex;
-  align-items: center;
   margin-top: 30rpx;
   padding: 20rpx;
   background-color: #fff;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.article-item__header {
+  display: flex;
+  align-items: center;
 }
 
 .article-item__thumbnail {
@@ -48,8 +51,19 @@ page {
   }
 }
 
-.article-item__info {
+.article-item__info-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 1px solid $color-border;
+}
+
+.article-item__category {
+  padding: 2px 4px;
+  background-color: $color-theme;
+  border-radius: 2px;
+  color: #fff;
 }
 
 .article-item__content {
