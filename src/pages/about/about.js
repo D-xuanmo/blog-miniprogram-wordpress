@@ -17,9 +17,9 @@ Page({
       domain: app.globalData.site.domain
     })
   },
-  copyText ({ target }) {
+  copyText ({ currentTarget }) {
     wx.$promisify('setClipboardData', {
-      data: target.dataset.text
+      data: currentTarget.dataset.text
     })
   }
 })
