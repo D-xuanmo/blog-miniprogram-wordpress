@@ -2,8 +2,8 @@
 .comment-item__container {
   flex: 1;
   padding: 20rpx;
-  box-shadow: 0 0 20px rgba(0,0,0,.1);
-  border-radius: 4px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
   word-break: break-all;
 }
 .comment-item__header {
@@ -15,7 +15,7 @@
 .comment-item__author-pic {
   width: 90rpx;
   height: 90rpx;
-  border-radius: 4px;
+  border-radius: $border-radius;
   overflow: hidden;
 }
 .comment-item__vip {

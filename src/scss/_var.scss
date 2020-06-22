@@ -13,6 +13,10 @@ $font-size-large: 30rpx;
 
 $color-border: #F2F6FC;
 
+$box-shadow: 0 0 20px rgba(0,0,0,.1);
+
+$border-radius: 4px;
+
 // 多行文字显示省略号
 @mixin ellipsisMultiline($number: 1) {
   display: -webkit-box;
