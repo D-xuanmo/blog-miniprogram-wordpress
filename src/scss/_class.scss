@@ -1,0 +1,87 @@
+// 文本对齐方式
+$align: left, center, right, justify;
+@each $c in $align {
+  .align-#{$c} {
+    text-align: $c;
+  }
+}
+
+$marginTop: 3, 5, 10, 15, 20;
+@each $mt in $marginTop {
+  .m-t-#{$mt}px {
+    margin-top: #{$mt * 2}rpx;
+  }
+}
+
+$marginRight: 3, 5, 10, 15, 20;
+@each $mr in $marginRight {
+  .m-r-#{$mr}px {
+    margin-right: #{$mr * 2}rpx;
+  }
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.f-s-small {
+  font-size: $font-size-small;
+}
+.f-s-large {
+  font-size: $font-size-large;
+}
+
+.f-w-blod {
+  font-weight: blod;
+}
+
+.c-theme {
+  color: $color-theme;
+}
+.c-sub-text {
+  color: $color-sub-text;
+}
+.c-tips-text {
+  color: $color-tips-text;
+}
+.c-placeholder {
+  color: $color-placeholder;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

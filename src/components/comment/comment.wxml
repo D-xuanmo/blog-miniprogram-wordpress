@@ -1,0 +1,34 @@
+<view class="comment-wrapper">
+  <view wx:for="{{list}}" wx:key="index" class="comment-item ^m-t-20px ^flex">
+    <view class="comment-item__author-pic ^m-r-10px">
+      <image
+        class="^w100 ^h100"
+        mode="widthFix"
+        src="{{item.author_avatar_urls[96]}}"
+      ></image>
+    </view>
+    <view class="comment-item__container">
+      <view class="^flex comment-item__header">
+        <view class="^m-r-5px comment-item__author">
+          {{item.author_name}}
+          <image
+            wx:if="{{item.userAgentInfo.vipStyle.admin}}"
+            class="comment-item__vip ^m-r-3px"
+            mode="widthFix"
+            src="../../image/icon-admin.png"
+          ></image>
+          <image
+            class="comment-item__vip"
+            mode="widthFix"
+            src="../../image/{{item.userAgentInfo.vipStyle.level}}.png"
+          ></image>
+        </view>
+        <view class="comment-item__time ^f-s-small ^c-placeholder">{{item.date}}</view>
+      </view>
+
+      <view class="comment-item__content ^m-t-10px">
+        <rich-text nodes="{{item.content}}"></rich-text>
+      </view>
+    </view>
+  </view>
+</view>

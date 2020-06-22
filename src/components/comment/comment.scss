@@ -1,0 +1,29 @@
+@import "../../scss/var";
+.comment-item__container {
+  flex: 1;
+  padding: 20rpx;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+  border-radius: 4px;
+  word-break: break-all;
+}
+.comment-item__header {
+  justify-content: space-between;
+}
+.comment-item__author {
+  width: 52%;
+}
+.comment-item__author-pic {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.comment-item__vip {
+  width: 34rpx;
+}
+.comment-item__time {
+  flex: 1;
+}
+.c-theme {
+  color: $color-theme;
+}

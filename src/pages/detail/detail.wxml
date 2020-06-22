@@ -1,0 +1,38 @@
+<view class="wrapper m-t-20px">
+  <view class="title">{{article.title.rendered}}</view>
+  <view class="clearfix">
+    <image class="author-pic fl m-r-10px" src="{{article.authorPic}}" mode="widthFix"></image>
+    <view class="info flex">
+      <view class="author-wrapper">
+        <view class="author">{{article.author}}</view>
+        <view class="time f-s-small c-placeholder">{{article.date}}</view>
+      </view>
+      <view class="count flex c-placeholder">
+        <view class="m-r-15px">
+          <text class="x-icon-eye m-r-5px"></text>
+          <text>{{viewCount}}</text>
+        </view>
+        <view class="m-r-15px">
+          <text class="x-icon-zan m-r-5px"></text>
+          <text>{{article.goodCount}}</text>
+        </view>
+        <view>
+          <text class="x-icon-comment m-r-5px"></text>
+          <text>{{article.commentCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrapper m-t-20px">
+    <rich-text nodes="{{article.content}}"></rich-text>
+  </view>
+
+  <view class="comment-count">
+    <text class="f-w-blod m-r-10px">评论</text>
+    <text class="f-s-small c-placeholder">{{total}}条</text>
+  </view>
+  <comment data="{{commentList}}"></comment>
+
+  <view wx:if="{{noMore}}" class="align-center m-t-20px no-more c-placeholder">已经到底啦~</view>
+</view>

@@ -1,0 +1,56 @@
+<view class="banner-container wrapper">
+  <swiper indicator-dots="true">
+    <block wx:for="{{banner}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.path}}" mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="wrapper notice-container">
+  <view class="notice-header"><text class="x-icon-notice"></text> 公告</view>
+  <view class="notice-content">
+    <rich-text nodes="{{notice}}"></rich-text>
+  </view>
+</view>
+
+<view class="wrapper article-container">
+  <view wx:for="{{articleList}}" wx:key="id" class="article-item w100">
+    <navigator
+      wx:if="{{item.articleInfor.thumbnail}}"
+      url="/pages/detail/detail?id={{item.id}}"
+      class="article-item__thumbnail align-center m-r-10px"
+    >
+      <image src="{{item.articleInfor.thumbnail}}" mode="widthFix"></image>
+    </navigator>
+
+    <view class="article-item__content">
+      <navigator
+        url="/pages/detail/detail?id={{item.id}}"
+        class="article-item__title f-s-large"
+      >
+        <text class="v-middle">{{item.title.rendered}}</text>
+      </navigator>
+
+      <view class="article-item__summary m-t-5px c-sub-text">{{item.articleInfor.summary}}</view>
+
+      <view class="article-item__info c-placeholder m-t-15px f-s-small">
+        <view class="m-r-10px">
+          <text class="x-icon-eye m-r-5px"></text>
+          <text>{{item.articleInfor.viewCount}}</text>
+        </view>
+        <view class="m-r-10px">
+          <text class="x-icon-zan m-r-5px"></text>
+          <text>{{item.articleInfor.xmLike.very_good}}</text>
+        </view>
+        <view>
+          <text class="x-icon-comment m-r-5px"></text>
+          <text>{{item.articleInfor.commentCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{noMore}}" class="align-center m-t-20px no-more c-placeholder">已经到底啦~</view>
+</view>

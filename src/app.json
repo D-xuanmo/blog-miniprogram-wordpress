@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#9466ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home-h.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "image/about.png",
+        "selectedIconPath": "image/about-h.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "轩陌博客",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

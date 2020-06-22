@@ -1,0 +1,15 @@
+@import "./scss/var";
+@import "./scss/class";
+@import "./iconfont.wxss";
+
+page {
+  padding-bottom: 30px;
+  font-family: "Arial";
+  font-size: $font-size-base;
+  color: $color-text;
+}
+
+image {
+  max-width: 100%;
+  vertical-align: top;
+}

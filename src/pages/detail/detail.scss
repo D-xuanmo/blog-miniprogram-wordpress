@@ -1,0 +1,57 @@
+@import "../../scss/var";
+.title {
+  padding: 40rpx 0;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.author-pic {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.info {
+  align-items: center;
+  justify-content: space-between;
+
+  [class^="x-icon"] {
+    font-size: 32rpx;
+  }
+}
+
+.content-wrapper {
+  line-height: 1.8;
+  word-break: break-all;
+}
+
+.code {
+  padding: 2px 5px;
+  background: #f7f7f9;
+  border: 1px solid #e3edf3;
+  border-radius: 3px;
+  color: #d14;
+}
+
+.blockquote {
+  margin: 20rpx 0;
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 5px;
+}
+
+.c-theme {
+  color: $color-theme;
+}
+
+.content-title {
+  margin: 20px 0;
+  padding-left: 10px;
+  border-left: 5px solid $color-theme;
+  background: #f0f2f7;
+  font-size: $font-size-large;
+}
+
+.comment-count {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1px solid $color-border;
+}

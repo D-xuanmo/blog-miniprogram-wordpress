@@ -1,0 +1,32 @@
+{
+  "name": "gulp-wechat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "build": "gulp build",
+    "lint": "eslint . --ext .js --fix"
+  },
+  "author": "Xuanmo <me@xuanmo.xin>",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-smushit": "^1.2.0",
+    "husky": "^4.2.5"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

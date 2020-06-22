@@ -1,0 +1,72 @@
+@import "../../scss/var";
+
+page {
+  background-color: $color-background;
+}
+
+.banner-container {
+  margin-top: 30rpx;
+  overflow: hidden;
+  border-radius: 4px;
+
+  image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+}
+
+.notice-container {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  .notice-header {
+    margin-bottom: 10rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.article-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.article-item__thumbnail {
+  width: 35%;
+
+  image {
+    width: 100%;
+  }
+}
+
+.article-item__info {
+  display: flex;
+}
+
+.article-item__content {
+  flex: 1;
+}
+
+.article-item__tag {
+  margin-right: 5px;
+  padding: 3px;
+  background-color: $color-theme;
+  border-radius: 7px;
+  font-size: 8px;
+  color: #fff;
+}
+
+.article-item__summary {
+  font-size: $font-size-small;
+  color: $color-sub-text;
+  @include ellipsisMultiline(3);
+}

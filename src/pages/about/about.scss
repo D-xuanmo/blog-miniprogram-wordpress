@@ -1,0 +1,66 @@
+@import "../../scss/var";
+
+.logo {
+  margin-top: 50rpx;
+  width: 280rpx;
+}
+.app-name {
+  margin: 30rpx 0 20rpx;
+  font-size: 40rpx;
+}
+.count-container {
+  display: flex;
+  justify-content: space-between;
+
+  .count-item {
+    width: 25%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $color-border;
+    }
+  }
+
+  .count-item__number {
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+
+    &.c-article {
+      color: #E85056;
+    }
+    &.c-archive {
+      color: #2D73C0;
+    }
+    &.c-comment {
+      color: #664119;
+    }
+    &.c-tag {
+      color: #DE5EBC;
+    }
+    &.c-link {
+      color: #F09D3E;
+    }
+  }
+
+  image {
+    width: 30rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+  }
+}
+
+.title-tips {
+  margin: 40rpx 0;
+  padding: 10rpx 8rpx;
+  border-left: 5px solid $color-theme;
+  background: #f0f2f7;
+  font-size: $font-size-large;
+}
+
+.contact {
+  image {
+    width: 40rpx;
+  }
+}

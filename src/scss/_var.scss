@@ -1,0 +1,24 @@
+$color-theme: #9466ff;
+
+$color-background: #EEF0F6;
+
+$color-text: #303133;
+$color-sub-text: #606266;
+$color-tips-text: #909399;
+$color-placeholder: #C0C4CC;
+
+$font-size-small: 24rpx;
+$font-size-base: 28rpx;
+$font-size-large: 30rpx;
+
+$color-border: #F2F6FC;
+
+// 多行文字显示省略号
+@mixin ellipsisMultiline($number: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}

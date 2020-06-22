@@ -1,0 +1,3 @@
+dist
+gulpfile*.js
+src/components/miniprogram_dist

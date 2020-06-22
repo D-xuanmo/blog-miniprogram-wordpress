@@ -1,0 +1,85 @@
+<view class="wrapper">
+  <view class="align-center">
+    <image class="logo" src="../../image/logo.png" mode="widthFix"></image>
+    <view class="app-name f-s-bold">{{appName}}</view>
+    <view class="version f-s-small c-sub-text">Version {{appVersion}}</view>
+  </view>
+
+  <view class="count-container m-t-20px">
+    <view class="count-item">
+      <view class="count-item__number c-article">{{articleCount}}</view>
+      <view class="align-center">
+        <image src="../../image/icon-article.png" mode="widthFix"></image>
+        <text class="v-middle">文章</text>
+      </view>
+    </view>
+
+    <view class="count-item">
+      <view class="count-item__number c-archive">{{archiveCount}}</view>
+      <view class="align-center">
+        <image src="../../image/icon-archive.png" mode="widthFix"></image>
+        <text class="v-middle">分类</text>
+      </view>
+    </view>
+
+    <view class="count-item">
+      <view class="count-item__number c-tag">{{tagCount}}</view>
+      <view class="align-center">
+        <image src="../../image/icon-tag.png" mode="widthFix"></image>
+        <text class="v-middle">标签</text>
+      </view>
+    </view>
+
+    <view class="count-item">
+      <view class="count-item__number c-comment">{{commentCount}}</view>
+      <view class="align-center">
+        <image src="../../image/icon-comment.png" mode="widthFix"></image>
+        <text class="v-middle">评论</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="title-tips">联系方式</view>
+  <view class="contact">
+    <view class="contact-item m-t-15px">
+      <image src="../../image/icon-link.png" mode="widthFix" class="m-r-5px"></image>
+      <text
+        class="c-theme"
+        data-text="{{domain}}"
+        bind:tap="copyText"
+      >{{domain}}</text>
+    </view>
+
+    <view class="contact-item m-t-15px">
+      <image src="../../image/icon-github.png" mode="widthFix" class="m-r-5px"></image>
+      <text
+        class="c-theme"
+        data-text="https://github.com/xuanmos"
+        bind:tap="copyText"
+      >https://github.com/xuanmos</text>
+    </view>
+
+    <view class="contact-item m-t-15px">
+      <image src="../../image/icon-qq.png" mode="widthFix" class="m-r-5px"></image>
+      <text
+        class="c-theme"
+        data-text="993901865"
+        bind:tap="copyText"
+      >993901865</text>
+    </view>
+
+    <!-- <view class="contact-item m-t-15px">
+      <image src="../../image/icon-wechat.png" mode="widthFix" class="m-r-5px"></image>
+      <text class="c-theme"></text>
+    </view> -->
+
+    <view class="contact-item m-t-15px">
+      <image src="../../image/icon-email.png" mode="widthFix" class="m-r-5px"></image>
+      <text
+        class="c-theme"
+        data-text="me@xuanmo.xin"
+        bind:tap="copyText"
+      >me@xuanmo.xin</text>
+    </view>
+  </view>
+</view>
