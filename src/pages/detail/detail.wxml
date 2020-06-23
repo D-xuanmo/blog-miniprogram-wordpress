@@ -8,12 +8,13 @@
         <view class="time f-s-small c-placeholder">{{article.date}}</view>
       </view>
       <view class="count flex c-placeholder">
-        <view class="m-r-15px">
+        <view class="m-r-10px">
           <text class="x-icon-eye m-r-5px"></text>
           <text>{{viewCount}}</text>
         </view>
-        <view class="m-r-15px">
-          <text class="x-icon-zan m-r-5px"></text>
+        <view class="m-r-10px" bind:tap="handlerLikes">
+          <text wx:if="{{showLikeLoading}}" class="x-icon-loading m-r-5px"></text>
+          <text wx:else class="{{liked ? 'x-icon-zan-h c-liked' : 'x-icon-zan'}} m-r-5px"></text>
           <text>{{article.goodCount}}</text>
         </view>
         <view>
@@ -28,11 +29,18 @@
     <rich-text nodes="{{article.content}}"></rich-text>
   </view>
 
+  <view class="operation">
+    <view bind:tap="handlerLikes">
+      <text wx:if="{{showLikeLoading}}" class="x-icon-loading m-r-5px"></text>
+      <text wx:else class="{{liked ? 'x-icon-zan-h c-liked' : 'x-icon-zan'}} m-r-5px"></text>
+    </view>
+  </view>
+
   <view class="comment-count">
     <text class="f-w-blod m-r-10px">评论</text>
     <text class="f-s-small c-placeholder">{{total}}条</text>
   </view>
-  <comment data="{{commentList}}"></comment>
+  <comment-list data="{{commentList}}"></comment-list>
 
   <view wx:if="{{loadingMore}}" class="load-more align-center m-t-20px c-placeholder">
     <text class="x-icon-loading v-middle"></text>

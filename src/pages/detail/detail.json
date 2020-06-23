@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "comment": "../../components/comment/comment"
+    "comment-list": "../../components/comment-list/comment-list"
   }
 }

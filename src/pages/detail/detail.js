@@ -5,14 +5,30 @@ Page({
     viewCount: 0,
 
     currentPage: 1,
-    totalPage: null,
-    total: null,
+    totalPage: 0,
+    total: 0,
     commentList: [],
     noMore: false,
-    loadingMore: false
+    loadingMore: false,
+
+    showLikeLoading: false,
+    liked: false
   },
 
   async onLoad ({ id }) {
+    // 获取当前文章是否已经点赞
+    try {
+      let { data } = await wx.$promisify('getStorage', {
+        key: `like_${id}`
+      })
+      this.setData({
+        liked: +data
+      })
+    } catch (e) {
+      this.setData({
+        liked: 0
+      })
+    }
     wx.showShareMenu()
     this.setData({
       articleId: id
@@ -88,6 +104,29 @@ Page({
     })
     this.setData({
       viewCount: data
+    })
+  },
+
+  async handlerLikes () {
+    if (this.data.liked) return
+    wx.vibrateShort()
+    this.setData({
+      showLikeLoading: true
+    })
+    let { data } = await wx.$request.post('/wp-json/xm-blog/v1/like', {
+      data: {
+        id: this.data.articleId,
+        key: 'very_good'
+      }
+    })
+    this.setData({
+      showLikeLoading: false,
+      ['article.goodCount']: data.very_good,
+      liked: 1
+    })
+    wx.$promisify('setStorage', {
+      key: `like_${this.data.articleId}`,
+      data: 1
     })
   }
 })

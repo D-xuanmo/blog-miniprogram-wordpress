@@ -23,6 +23,16 @@
   word-break: break-all;
 }
 
+.operation {
+  display: flex;
+  justify-content: center;
+  margin: 40rpx 0;
+
+  [class^="x-icon"] {
+    font-size: 60rpx;
+  }
+}
+
 .code {
   padding: 2px 5px;
   background: #f7f7f9;
