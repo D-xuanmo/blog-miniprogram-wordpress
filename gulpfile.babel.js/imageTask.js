@@ -1,6 +1,6 @@
 // 压缩、拷贝图片任务
 const gulp = require('gulp');
-const smushit = require('gulp-smushit');
+const imagemin = require('gulp-imagemin')
 
 const { DEST_PATH, delFile } = require('./common');
 
@@ -13,9 +13,10 @@ const imageTask = cb => {
 
 const imageBuildTask = cb => {
   gulp.src(PATH)
-    .pipe(smushit({
-      verbose: true
-    }))
+    .pipe(imagemin([
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 })
+    ]))
     .pipe(gulp.dest(DEST_PATH));
   cb();
 }
