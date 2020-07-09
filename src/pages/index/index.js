@@ -67,7 +67,7 @@ Page({
     })
     this.setData({
       articleList: [...this.data.articleList, ...data],
-      totalPage: +header['X-WP-TotalPages']
+      totalPage: +header['x-wp-totalpages']
     })
   },
 
