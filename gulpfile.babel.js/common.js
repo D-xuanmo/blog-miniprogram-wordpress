@@ -7,7 +7,7 @@ const fileMap = {
 module.exports = {
   DEST_PATH: 'dist',
   DEST_PAGE_PATH: 'dist/pages',
-  showError: error => {
+  showError (error) {
     console.log(error.toString());
     this.emit('end');
   },

@@ -1,3 +1,4 @@
+import API from '../../api/index'
 const app = getApp()
 
 Page({
@@ -43,7 +44,7 @@ Page({
   },
 
   async getGlobalInfo () {
-    let { data } = await wx.$request.get('/wp-json/xm-blog/v1/info')
+    let { data } = await API.getGlobalData()
     app.globalData.site = data
     this.setData({
       banner: data.banner.list,
@@ -58,13 +59,7 @@ Page({
       })
       return
     }
-    let { data, header } = await wx.$request.get('/wp-json/wp/v2/posts', {
-      data: {
-        page: this.data.currentPage,
-        per_page: 10,
-        _embed: true
-      }
-    })
+    let { data, header } = await API.getArticleList(this.data.currentPage)
     this.setData({
       articleList: [...this.data.articleList, ...data],
       totalPage: +header['X-WP-TotalPages']

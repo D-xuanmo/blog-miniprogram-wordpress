@@ -39,7 +39,7 @@
     </view>
 
     <view class="article-item__info-container m-t-15px">
-      <view class="article-item__category f-s-small m-r-5px">{{item.articleInfor.classify[0].name}}</view>
+      <view class="article-item__category f-s-small m-r-5px"><rich-text nodes="{{item.articleInfor.classify[0].name}}"></rich-text></view>
       <view class="article-item__info flex c-placeholder f-s-small">
         <view class="m-r-10px">
           <text class="x-icon-eye m-r-5px"></text>

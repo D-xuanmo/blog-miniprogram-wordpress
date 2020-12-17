@@ -1,3 +1,5 @@
+import API from '../../api/index'
+
 Page({
   data: {
     article: {},
@@ -54,7 +56,7 @@ Page({
   },
 
   async getDetail (id) {
-    let { data } = await wx.$request.get(`/wp-json/wp/v2/posts/${id}`)
+    let { data } = await API.getArticleDetail(id)
     const content = data.content.rendered
       .replace(/<img/gi, '<img style="max-width:100%;height:auto;"')
       .replace(/<code/gi, '<code class="code"')
@@ -83,11 +85,9 @@ Page({
       })
       return
     }
-    let { data, header } = await wx.$request.get('/wp-json/wp/v2/comments', {
-      data: {
-        post: id,
-        page: this.data.currentPage
-      }
+    let { data, header } = await API.getCommentList({
+      post: id,
+      page: this.data.currentPage
     })
     this.setData({
       commentList: data,
@@ -97,11 +97,7 @@ Page({
   },
 
   async updateViewCount (id) {
-    let { data } = await wx.$request.post('/wp-json/xm-blog/v1/view-count', {
-      data: {
-        id
-      }
-    })
+    let { data } = await API.updateViewCount(id)
     this.setData({
       viewCount: data
     })
@@ -113,12 +109,7 @@ Page({
     this.setData({
       showLikeLoading: true
     })
-    let { data } = await wx.$request.post('/wp-json/xm-blog/v1/like', {
-      data: {
-        id: this.data.articleId,
-        key: 'very_good'
-      }
-    })
+    let { data } = await API.handlerLikes(this.data.articleId)
     this.setData({
       showLikeLoading: false,
       ['article.goodCount']: data.very_good,

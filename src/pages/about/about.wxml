@@ -53,9 +53,9 @@
       <view class="contact-item m-t-15px">
         <image src="../../image/icon-github.png" mode="widthFix" class="m-r-5px"></image>
         <text
-          data-text="https://github.com/xuanmos"
+          data-text="https://github.com/D-xuanmo"
           bind:tap="copyText"
-        >https://github.com/xuanmos</text>
+        >https://github.com/D-xuanmo</text>
       </view>
 
       <view class="contact-item m-t-15px">
