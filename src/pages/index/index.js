@@ -62,7 +62,7 @@ Page({
     let { data, header } = await API.getArticleList(this.data.currentPage)
     this.setData({
       articleList: [...this.data.articleList, ...data],
-      totalPage: +header['X-WP-TotalPages']
+      totalPage: +header['x-wp-totalpages']
     })
   },
 
