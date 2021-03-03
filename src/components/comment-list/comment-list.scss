@@ -27,3 +27,10 @@
 .c-theme {
   color: $color-theme;
 }
+.text-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #fff;
+}

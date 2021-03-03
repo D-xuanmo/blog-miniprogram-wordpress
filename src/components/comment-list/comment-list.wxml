@@ -1,11 +1,17 @@
 <view class="comment-wrapper">
   <view wx:for="{{list}}" wx:key="index" class="comment-item ^m-t-20px ^flex">
     <view class="comment-item__author-pic ^m-r-10px">
+      <view
+        wx:if="{{isTextThumbnail}}"
+        class="^w100 ^h100 text-thumbnail"
+        style="background: {{item.userAgentInfo.background}}"
+      >{{item.firstName}}</view>
       <image
+        wx:else
         class="^w100 ^h100"
         mode="widthFix"
         src="{{item.author_avatar_urls[96]}}"
-      ></image>
+      />
     </view>
     <view class="comment-item__container">
       <view class="^flex comment-item__header">
