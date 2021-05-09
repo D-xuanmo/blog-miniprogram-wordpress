@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "轩陌博客",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "article-list": "../../components/article-list/article-list"
+  }
 }
