@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp",
     "build": "gulp build",
     "lint": "eslint . --ext .js --fix"

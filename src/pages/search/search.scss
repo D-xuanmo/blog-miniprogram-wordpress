@@ -1,0 +1,30 @@
+@import "../../scss/var";
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-background;
+}
+
+.input-wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 9;
+  padding-top: 20rpx;
+  background: $color-background;
+  transform: translateX(-50%);
+}
+
+.input {
+  width: calc(90% - 20rpx);
+  padding: 10rpx;
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.article-list {
+  margin-top: 90rpx;
+}

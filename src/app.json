@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/search",
     "pages/about/about"
   ],
   "tabBar": {
@@ -14,6 +15,12 @@
         "iconPath": "image/home.png",
         "selectedIconPath": "image/home-h.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "image/search.png",
+        "selectedIconPath": "image/search-h.png",
+        "text": "搜索"
       },
       {
         "pagePath": "pages/about/about",

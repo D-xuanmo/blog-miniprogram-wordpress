@@ -1,0 +1,18 @@
+<view class="input-wrapper w100">
+  <input
+    confirm-type="search"
+    placeholder="输入关键字查询"
+    class="wrapper input"
+    maxlength="{{ 30 }}"
+    bind:confirm="search"
+  ></input>
+</view>
+
+<article-list
+  class="article-list"
+  auto-request="{{ false }}"
+  is-load-more="{{ isLoadMore }}"
+  is-reload="{{ isSearch }}"
+  query-keywords="{{ keywords }}"
+  bind:loaded="onLoaded"
+></article-list>

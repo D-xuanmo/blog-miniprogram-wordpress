@@ -6,17 +6,17 @@ $align: left, center, right, justify;
   }
 }
 
-$marginTop: 3, 5, 10, 15, 20;
-@each $mt in $marginTop {
-  .m-t-#{$mt}px {
-    margin-top: #{$mt * 2}rpx;
-  }
-}
-
-$marginRight: 3, 5, 10, 15, 20;
-@each $mr in $marginRight {
-  .m-r-#{$mr}px {
-    margin-right: #{$mr * 2}rpx;
+$margin: (
+  top: 3 5 10 15 20 30,
+  right: 3 5 10 15 20 30,
+  bottom: 3 5 10 15 20 30,
+  left: 3 5 10 15 20 30
+);
+@each $direction, $value in $margin {
+  @each $num in $value {
+    .m-#{str-slice($direction, 1, 1)}-#{$num}px {
+      margin-#{$direction}: #{$num * 2}rpx;
+    }
   }
 }
 
