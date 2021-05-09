@@ -13,7 +13,7 @@ const javascript = cb => {
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
     .on('error', showError)
-    .pipe(babel())
+    // .pipe(babel())
     .on('error', showError)
     .pipe(gulp.dest(DEST_PAGE_PATH));
 
@@ -22,7 +22,7 @@ const javascript = cb => {
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
     .on('error', showError)
-    .pipe(babel())
+    // .pipe(babel())
     .on('error', showError)
     .pipe(gulp.dest(DEST_PATH));
   cb();
