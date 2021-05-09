@@ -7,12 +7,12 @@ export default {
   },
 
   // 获取文章列表
-  getArticleList (page) {
+  getArticleList (params) {
     return request.get('/wp-json/wp/v2/posts', {
       data: {
-        page,
         per_page: 10,
-        _embed: true
+        _embed: true,
+        ...params
       }
     })
   },

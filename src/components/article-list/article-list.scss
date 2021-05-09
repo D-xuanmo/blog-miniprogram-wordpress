@@ -1,0 +1,56 @@
+@import "../../scss/_var.scss";
+
+.article-item {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+}
+
+.article-item__header {
+  display: flex;
+  align-items: center;
+}
+
+.article-item__thumbnail {
+  width: 35%;
+
+  image {
+    width: 100%;
+  }
+}
+
+.article-item__info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 1px solid $color-border;
+}
+
+.article-item__category {
+  padding: 2px 4px;
+  background-color: $color-theme;
+  border-radius: 2px;
+  color: #fff;
+}
+
+.article-item__content {
+  flex: 1;
+}
+
+.article-item__tag {
+  margin-right: 5px;
+  padding: 3px;
+  background-color: $color-theme;
+  border-radius: 7px;
+  font-size: 8px;
+  color: #fff;
+}
+
+.article-item__summary {
+  font-size: $font-size-small;
+  color: $color-sub-text;
+  @include ellipsisMultiline(3);
+}
