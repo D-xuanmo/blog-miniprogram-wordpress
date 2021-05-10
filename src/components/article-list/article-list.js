@@ -69,6 +69,7 @@ Component({
       // 是否为最后一页
       if (this.data.totalPage && this.data.currentPage > this.data.totalPage) {
         this.setData({
+          loadingMore: false,
           noMore: true
         })
         return
