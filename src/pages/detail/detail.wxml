@@ -33,6 +33,7 @@
     <view bind:tap="handlerLikes">
       <text wx:if="{{showLikeLoading}}" class="x-icon-loading m-r-5px"></text>
       <text wx:else class="{{liked ? 'x-icon-zan-h c-liked' : 'x-icon-zan'}} m-r-5px"></text>
+      <text>{{article.goodCount}}</text>
     </view>
   </view>
 
