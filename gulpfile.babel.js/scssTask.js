@@ -1,6 +1,6 @@
 // 编译src目录下的scss文件
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const rename = require('gulp-rename');
 
 const { showError, delFile, DEST_PAGE_PATH, DEST_PATH } = require('./common');
