@@ -1,6 +1,5 @@
 <view class="wrapper">
   <view class="align-center">
-    <image class="logo" src="../../image/logo.png" mode="widthFix"></image>
     <view class="app-name f-s-bold">{{appName}}</view>
     <view class="version f-s-small c-sub-text">Version {{appVersion}}</view>
   </view>
