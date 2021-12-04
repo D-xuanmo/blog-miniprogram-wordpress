@@ -10,7 +10,7 @@
         wx:else
         class="^w100 ^h100"
         mode="widthFix"
-        src="{{item.author_avatar_urls[96]}}"
+        src="{{item.userAgentInfo.author_avatar_urls}}"
       />
     </view>
     <view class="comment-item__container">
